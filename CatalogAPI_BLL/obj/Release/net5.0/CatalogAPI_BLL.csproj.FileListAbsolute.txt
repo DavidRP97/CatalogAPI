@@ -1,0 +1,11 @@
+C:\Users\drodr\Desktop\Meus Projetos\ASP.Net Core\CatalogAPI\CatalogAPI_BLL\bin\Release\net5.0\CatalogAPI_BLL.deps.json
+C:\Users\drodr\Desktop\Meus Projetos\ASP.Net Core\CatalogAPI\CatalogAPI_BLL\bin\Release\net5.0\CatalogAPI_BLL.dll
+C:\Users\drodr\Desktop\Meus Projetos\ASP.Net Core\CatalogAPI\CatalogAPI_BLL\bin\Release\net5.0\ref\CatalogAPI_BLL.dll
+C:\Users\drodr\Desktop\Meus Projetos\ASP.Net Core\CatalogAPI\CatalogAPI_BLL\bin\Release\net5.0\CatalogAPI_BLL.pdb
+C:\Users\drodr\Desktop\Meus Projetos\ASP.Net Core\CatalogAPI\CatalogAPI_BLL\obj\Release\net5.0\CatalogAPI_BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\drodr\Desktop\Meus Projetos\ASP.Net Core\CatalogAPI\CatalogAPI_BLL\obj\Release\net5.0\CatalogAPI_BLL.AssemblyInfoInputs.cache
+C:\Users\drodr\Desktop\Meus Projetos\ASP.Net Core\CatalogAPI\CatalogAPI_BLL\obj\Release\net5.0\CatalogAPI_BLL.AssemblyInfo.cs
+C:\Users\drodr\Desktop\Meus Projetos\ASP.Net Core\CatalogAPI\CatalogAPI_BLL\obj\Release\net5.0\CatalogAPI_BLL.csproj.CoreCompileInputs.cache
+C:\Users\drodr\Desktop\Meus Projetos\ASP.Net Core\CatalogAPI\CatalogAPI_BLL\obj\Release\net5.0\CatalogAPI_BLL.dll
+C:\Users\drodr\Desktop\Meus Projetos\ASP.Net Core\CatalogAPI\CatalogAPI_BLL\obj\Release\net5.0\ref\CatalogAPI_BLL.dll
+C:\Users\drodr\Desktop\Meus Projetos\ASP.Net Core\CatalogAPI\CatalogAPI_BLL\obj\Release\net5.0\CatalogAPI_BLL.pdb

@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "CatalogAPI_BLL/1.0.0": {
+        "runtime": {
+          "CatalogAPI_BLL.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CatalogAPI_BLL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

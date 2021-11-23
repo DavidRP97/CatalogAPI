@@ -2,10 +2,8 @@
 using CatalogAPI_DAL.Context;
 using CatalogAPI_DAL.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace CatalogAPI_DAL.Repositories
@@ -23,14 +21,24 @@ namespace CatalogAPI_DAL.Repositories
             return await _appDbContext.Products.AsNoTracking().Include(x => x.Category).ToListAsync();
         }
 
-        public async Task<IEnumerable<Product>> GetByCategoryId(int categoryId)
+        public Task<IEnumerable<Product>> GetByCategoryId(int categoryId)
         {
-            return await _appDbContext.Products.AsNoTracking().Include(x => x.Category).Where(x => x.CategoryId == categoryId).ToListAsync();
+            throw new System.NotImplementedException();
         }
+
+        //public async Task<IEnumerable<Product>> GetByCategoryId(int categoryId)
+        //{
+        //    return await _appDbContext.Products.AsNoTracking().Include(x => x.Category).Where(x => x.CategoryId == categoryId).ToListAsync();
+        //}
 
         public string GetProductName(int id)
         {
-            return _appDbContext.Products.Where(x => x.ProductId == id).Select(x => x.Name).FirstOrDefault();
+            throw new System.NotImplementedException();
         }
+
+        //public string GetProductName(int id)
+        //{
+        //    return _appDbContext.Products.Where(x => x.ProductId == id).Select(x => x.Name).FirstOrDefault();
+        //}
     }
 }

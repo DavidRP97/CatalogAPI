@@ -25,6 +25,9 @@ using System.Text;
 using CatalogAPI.WebAPI_Dependency_Injection_Config;
 using AutoMapper;
 using CatalogAPI.DTOs.Mappings;
+using CatalogAPI_BLL.Models;
+using MongoDB.Bson;
+using CatalogAPI_SERVICES.Configure_Dependency_Injection;
 
 namespace CatalogAPI
 {
@@ -49,7 +52,7 @@ namespace CatalogAPI
             services.AddSingleton(mapper);
 
             services.AddDbContext<AppDbContext>(options =>
-            options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
+            options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));          
 
             services.AddIdentity<IdentityUser, IdentityRole>()
                 .AddEntityFrameworkStores<AppDbContext>()
@@ -78,6 +81,7 @@ namespace CatalogAPI
 
             services.ConfigureDIWebConfig();
             services.ConfigureDI();
+            services.ConfigureDIServices();
 
             services.AddSwaggerGen(c =>
             {

@@ -5,13 +5,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="C:\Users\drodr\.nuget\packages\mongodb.driver.core\2.13.2\contentFiles\any\netstandard2.1\Core\Compression\Snappy\lib\win\snappy32.dll" />
+    <Content Remove="C:\Users\drodr\.nuget\packages\mongodb.driver.core\2.13.2\contentFiles\any\netstandard2.1\Core\Compression\Snappy\lib\win\snappy64.dll" />
+    <Content Remove="C:\Users\drodr\.nuget\packages\mongodb.driver.core\2.13.2\contentFiles\any\netstandard2.1\Core\Compression\Zstandard\lib\win\libzstd.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.11" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.11" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.11">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="MongoDB.Driver" Version="2.13.2" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="5.0.10" />
+    <PackageReference Include="ServiceStack.Core" Version="5.13.0" />
   </ItemGroup>
 
   <ItemGroup>

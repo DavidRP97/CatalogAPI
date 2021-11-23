@@ -3,9 +3,12 @@ using CatalogAPI.DTOs;
 using CatalogAPI_BLL.Models;
 using CatalogAPI_DAL.Context;
 using CatalogAPI_DAL.Interfaces;
+using CatalogAPI_DAL.Interfaces.Mongo;
+using CatalogAPI_SERVICES.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MongoDB.Bson;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,31 +17,29 @@ using System.Threading.Tasks;
 
 namespace CatalogAPI.Controllers
 {
-    [Authorize(AuthenticationSchemes = "Bearer")]
+    //[Authorize(AuthenticationSchemes = "Bearer")]
     [Route("api/[controller]")]
     [ApiController]
     public class CategoriesController : ControllerBase
     {
+        private readonly ICategoryServices _categoryServices;
         private readonly ICategoriesDA _categoriesDa;
         private readonly IMapper _mapper;
-        public CategoriesController(ICategoriesDA categoriesDa, IMapper mapper)
+        public CategoriesController(ICategoriesDA categoriesDa, IMapper mapper, ICategoryServices categoryServices)
         {
+            _categoryServices = categoryServices;
             _mapper = mapper;
             _categoriesDa = categoriesDa;
         }        
 
         [HttpPost]
-        public async Task<ActionResult> Post([FromBody] CategoryDTO categories)
+        public async Task<ActionResult> Post([FromBody] Categories categories)
         {
             try
             {
-                var cat = _mapper.Map<Categories>(categories);
+                await _categoryServices.SaveCategory(categories);
 
-                var produtoDto = _mapper.Map<CategoryDTO>(cat);
-
-                await _categoriesDa.Insert(cat);
-
-                return new ObjectResult(cat) { StatusCode = 200 };
+                return new ObjectResult(categories) { StatusCode = 200 };
             }
             catch (Exception)
             {
@@ -49,42 +50,42 @@ namespace CatalogAPI.Controllers
         [HttpGet]
         public async Task<IEnumerable<Categories>> GetAll()
         {
-            return await _categoriesDa.GetAll();
+            return await _categoryServices.GetCategories();
         }
 
         [HttpGet("Produtos")]
         public async Task<IEnumerable<Categories>> Get()
         {
-            var ser = await _categoriesDa.GetWithProducts();
+            var ser = await _categoryServices.GetCategories();
 
             return ser;
         }
         [HttpGet("{id}")]
-        public async Task<Categories> Get(int id)
+        public async Task<Categories> Get(string id)
         {
-            return await _categoriesDa.GetById(id);
+            return await _categoryServices.GetCategorytById(ObjectId.Parse(id));
         }
 
-        [HttpPut("{id}")]
-        public async Task<ActionResult> Put(int id, [FromBody] Categories categories)
-        {
-            try
-            {
-                if (id != categories.CategoryId)
-                {
-                    return BadRequest();
-                }
+        //[HttpPut("{id}")]
+        //public async Task<ActionResult> Put(int id, [FromBody] Categories categories)
+        //{
+        //    try
+        //    {
+        //        if (id != categories.CategoryId)
+        //        {
+        //            return BadRequest();
+        //        }
 
-                await _categoriesDa.Update(categories);
+        //        await _categoriesDa.Update(categories);
 
-                return new ObjectResult(categories);
-            }
-            catch (Exception)
-            {
+        //        return new ObjectResult(categories);
+        //    }
+        //    catch (Exception)
+        //    {
 
-                return StatusCode(StatusCodes.Status500InternalServerError, "Erro ao atualizar a categoria");
-            }
-        }
+        //        return StatusCode(StatusCodes.Status500InternalServerError, "Erro ao atualizar a categoria");
+        //    }
+        //}
 
         [HttpDelete("{id}")]
         public async Task<ActionResult<Categories>> Delete(int id)

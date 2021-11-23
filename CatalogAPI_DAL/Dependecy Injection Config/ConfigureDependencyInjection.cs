@@ -1,11 +1,10 @@
-﻿using CatalogAPI_DAL.Interfaces;
+﻿using CatalogAPI_DAL.Context;
+using CatalogAPI_DAL.Interfaces;
+using CatalogAPI_DAL.Interfaces.Mongo;
 using CatalogAPI_DAL.Repositories;
+using CatalogAPI_DAL.Repositories.Mongo;
+using CatalogAPI_DAL.UoW;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CatalogAPI_DAL.Dependecy_Injection_Config
 {
@@ -15,6 +14,10 @@ namespace CatalogAPI_DAL.Dependecy_Injection_Config
         {
             services.AddTransient<ICategoriesDA, CategoriesREP>();
             services.AddTransient<IProductDA, ProductREP>();
+            services.AddScoped<IProductMongoRepository, ProductMongoRepository>();
+            services.AddScoped<ICategoryMongoRepository, CategoryMongoRepository>();
+            services.AddScoped<IMongoDBContext, MongoDBContext>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
         }
     }
 }

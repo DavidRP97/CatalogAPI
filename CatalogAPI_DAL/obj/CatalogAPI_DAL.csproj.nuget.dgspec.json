@@ -46,6 +46,16 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "AspNetCore.Identity.MongoDbCore": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "MongoDB.Bson": {
+              "target": "Package",
+              "version": "[2.13.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -126,9 +136,17 @@
               "target": "Package",
               "version": "[5.0.11, )"
             },
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.13.2, )"
+            },
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[5.0.10, )"
+            },
+            "ServiceStack.Core": {
+              "target": "Package",
+              "version": "[5.13.0, )"
             }
           },
           "imports": [

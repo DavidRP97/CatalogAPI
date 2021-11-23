@@ -11,6 +11,6 @@
     <WebStackScaffolding_DbContextTypeFullName>CatalogAPI_DAL.Context.AppDbContext</WebStackScaffolding_DbContextTypeFullName>
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
     <WebStackScaffolding_IsViewGenerationSelected>False</WebStackScaffolding_IsViewGenerationSelected>
-    <NameOfLastUsedPublishProfile>C:\Users\drodr\Desktop\Meus Projetos\ASP.Net Core\CatalogAPI\CatalogAPI\Properties\PublishProfiles\FolderProfile.pubxml</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>FolderProfile</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>
